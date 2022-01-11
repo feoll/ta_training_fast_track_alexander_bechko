@@ -1,11 +1,12 @@
 package com.company.fundamentals.task.main;
 
+import java.util.Scanner;
+
 public class Task5 {
     public static void main(String[] args) {
-        outputMonthById(1);
-        outputMonthById(3);
-        outputMonthById(12);
-        outputMonthById(13);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите порядковый номер месяца: ");
+        outputMonthById(scanner.nextInt());
     }
 
     private static void outputMonthById(int id) {
