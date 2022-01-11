@@ -1,6 +1,7 @@
 package com.company.fundamentals.task.optional.task2;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Matrix {
     public static int[][] generateMatrix(int length, int numberFrom, int numberTo) {
@@ -8,7 +9,7 @@ public class Matrix {
 
         for(int i = 0; i < length; i++)
             for(int j = 0; j < length; j++)
-                matrix[i][j] = new Random().nextInt(numberFrom, numberTo + 1);
+                matrix[i][j] = ThreadLocalRandom.current().nextInt(numberFrom, numberTo + 1);
         return matrix;
     }
 
