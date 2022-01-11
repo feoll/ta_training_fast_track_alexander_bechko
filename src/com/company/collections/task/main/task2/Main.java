@@ -7,10 +7,12 @@ import com.company.collections.task.main.task2.Sweets.ChocolateCandy;
 
 import java.util.ArrayList;
 import java.util.List;
+import static com.company.collections.task.main.task2.Util.Candies.getCandyFromListByRangeSugar;
 
 public class Main {
     public static void main(String[] args) {
-        List<Candy> candies = getListCandies();
+        List<Candy> candies = new ArrayList<>();
+        initListCandies(candies);
 
         NewYearsGift newYearsGift = new NewYearsGift(candies, 10);
         System.out.println(newYearsGift);
@@ -21,19 +23,9 @@ public class Main {
         System.out.println(getCandyFromListByRangeSugar(candies, 6,10));
     }
 
-    private static List<Candy> getListCandies() {
-        List<Candy> candies = new ArrayList<>();
-        candies.add(new CaramelCandy(10, "Коммунарка"));
-        candies.add(new ChocolateCandy(20, "Коммунарка"));
-        candies.add(new CaramelCandy(5, "Нестле"));
-        return candies;
+    private static void initListCandies(List<Candy> candies) {
+        candies.add(new CaramelCandy(10, "Коммунарка", 10));
+        candies.add(new ChocolateCandy(20, "Коммунарка", 10));
+        candies.add(new CaramelCandy(5, "Нестле", 10));
     }
-
-    private static Candy getCandyFromListByRangeSugar(List<Candy> candies, int sugarFrom, int sugarTo) {
-        for(Candy candy : candies)
-            if(candy.getAmountOfSugar() >= sugarFrom && candy.getAmountOfSugar() <= sugarTo)
-                return candy;
-        return null;
-    }
-
 }
